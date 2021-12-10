@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Text, View} from 'react-native';
 class GetNews extends Component {
   state = {
-      news:[]
+    news: [],
   };
   componentDidMount() {
     this.props.navigation.setOptions({
@@ -10,19 +10,18 @@ class GetNews extends Component {
     });
 
     fetch(
-        `https://newsapi.org/v2/top-headlines?
-        category=${}&country=in&apiKey=${config.API_KEY}`,
-      )
-        .then(res => res.json())
-        .then(response => {
-          this.setState({
-            news: response.articles,
-          });
-          setLoading(false)
-        })
-        .catch(error => {
-          console.log(error);
+      `https://newsapi.org/v2/top-headlines?category=${this.props.route.params.category}&country=in&apiKey=${config.API_KEY}`,
+    )
+      .then(res => res.json())
+      .then(response => {
+        this.setState({
+          news: response.articles,
         });
+        setLoading(false);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
   render() {
     return (
