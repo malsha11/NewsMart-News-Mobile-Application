@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ActivityIndicator, ScrollView, Text, View} from 'react-native';
+import {ActivityIndicator, ScrollView, Text, View, Image} from 'react-native';
 import config from '../config/config';
 
 class GetNews extends Component {
@@ -33,7 +33,12 @@ class GetNews extends Component {
         ) : (
           <ScrollView>
             {this.state.news.map((news, index) => (
-              <View></View>
+              <View key={index}>
+                <Image
+                  sourse={{uri: `${news.urlToImage}`}}
+                  style={{height: 100, width: 100, borderRadius: 10}}
+                />
+              </View>
             ))}
           </ScrollView>
         )}
