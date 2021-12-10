@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {ActivityIndicator, Text, View} from 'react-native';
 import config from '../config/config';
 
 class GetNews extends Component {
@@ -28,7 +28,10 @@ class GetNews extends Component {
   render() {
     return (
       <View>
-        <Text>{this.props.route.params.category}</Text>
+        {
+            this.state.news.length === 0 ?
+            <ActivityIndicator/>:
+        }
       </View>
     );
   }
