@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View} from 'react-native';
+import config from '../config/config';
+
 class GetNews extends Component {
   state = {
     news: [],
