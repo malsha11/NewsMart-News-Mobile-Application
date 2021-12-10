@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ActivityIndicator, Text, View} from 'react-native';
+import {ActivityIndicator, ScrollView, Text, View} from 'react-native';
 import config from '../config/config';
 
 class GetNews extends Component {
@@ -28,10 +28,15 @@ class GetNews extends Component {
   render() {
     return (
       <View>
-        {
-            this.state.news.length === 0 ?
-            <ActivityIndicator/>:
-        }
+        {this.state.news.length === 0 ? (
+          <ActivityIndicator size="large" color="black" />
+        ) : (
+          <ScrollView>
+            {this.state.news.map((news, index) => (
+              <View></View>
+            ))}
+          </ScrollView>
+        )}
       </View>
     );
   }
