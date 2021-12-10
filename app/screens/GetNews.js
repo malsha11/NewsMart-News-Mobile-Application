@@ -3,9 +3,12 @@ import {ActivityIndicator, ScrollView, Text, View, Image} from 'react-native';
 import config from '../config/config';
 
 class GetNews extends Component {
-  state = {
-    news: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      news: [],
+    };
+  }
   componentDidMount() {
     this.props.navigation.setOptions({
       title: this.props.route.params.category,
@@ -34,9 +37,9 @@ class GetNews extends Component {
           <ScrollView>
             {this.state.news.map((news, index) => (
               <View key={index}>
-                <Image
-                  sourse={{uri: `${news.urlToImage}`}}
-                  style={{height: 100, width: 100, borderRadius: 10}}
+              <Image
+                  source={{uri: `${news.urlToImage}`}}
+                  style={{height: 200, width: 200, borderRadius: 10}}
                 />
               </View>
             ))}
