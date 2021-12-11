@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {
   ActivityIndicator,
   ScrollView,
+  StyleSheet,
   Text,
   View,
   Image,
@@ -12,7 +13,7 @@ import config from '../config/config';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
-class GetNews extends Component {
+export default class GetNews extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,15 +41,10 @@ class GetNews extends Component {
   }
   render() {
     return (
-      <View>
+      <View style={styles.header}>
         {this.state.news.length === 0 ? (
           <ActivityIndicator
-            style={{
-              height: deviceHeight,
-              width: deviceWidth,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
+            style={styles.indicater}
             size="large"
             color="black"
           />
@@ -56,20 +52,12 @@ class GetNews extends Component {
           <ScrollView showsVerticalScrollIndicator={false}>
             {this.state.news.map((news, index) =>
               news.urlToImage ? (
-                <View
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    backgroundColor: 'white',
-                    borderRadius: 10,
-                    elevation: 4,
-                  }}
-                  key={index}>
+                <View style={styles.newsBox} key={index}>
                   <Image
                     source={{uri: `${news.urlToImage}`}}
-                    style={{height: 100, width: 100, borderRadius: 10}}
+                    style={styles.newsImage}
                   />
-                  <Text>{news.title}</Text>
+                  <Text style={styles.newstitle}>{news.title}</Text>
                 </View>
               ) : null,
             )}
@@ -79,4 +67,34 @@ class GetNews extends Component {
     );
   }
 }
-export default GetNews;
+const styles = StyleSheet.create({
+  header: {
+    alignItems: 'center',
+  },
+  newsBox: {
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    borderRadius: 10,
+    elevation: 4,
+    width: deviceWidth - 30,
+    marginVertical: 7,
+  },
+  indicater: {
+    height: deviceHeight,
+    width: deviceWidth,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  newstitle: {
+    width: deviceWidth - 130,
+    paddingLeft: 10,
+    paddingTop: 5,
+  },
+  newsImage: {
+    height: 100,
+    width: 100,
+    borderRadius: 10,
+  },
+});

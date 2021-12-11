@@ -5,7 +5,7 @@ import TrendingNews from '../components/TrendingNews';
 
 import config from '../config/config';
 
-class HomeScreen extends Component {
+export default class HomeScreen extends Component {
   state = {
     news: [],
   };
@@ -21,4 +21,4 @@ class HomeScreen extends Component {
   }
 }
 
-export default HomeScreen;
+
