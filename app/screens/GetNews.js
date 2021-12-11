@@ -37,7 +37,7 @@ class GetNews extends Component {
           <ScrollView>
             {this.state.news.map((news, index) =>
               news.urlToImage ? (
-                <View key={index}>
+                <View style={{display:'flex', flexDirection:'row'}} key={index}>
                   <Image
                     source={{uri: `${news.urlToImage}`}}
                     style={{height: 100, width: 100, borderRadius: 10}}
