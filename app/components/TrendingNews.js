@@ -19,7 +19,7 @@ class TrendingNews extends Component {
         this.setState({
           news: response.articles,
         });
-        setLoading(false)
+        /*setLoading(false)*/
       })
       .catch(error => {
         console.log(error);

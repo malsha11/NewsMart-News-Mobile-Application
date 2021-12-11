@@ -22,7 +22,7 @@ class GetNews extends Component {
         this.setState({
           news: response.articles,
         });
-        setLoading(false);
+        /*setLoading(false)*/
       })
       .catch(error => {
         console.log(error);
@@ -35,14 +35,16 @@ class GetNews extends Component {
           <ActivityIndicator size="large" color="black" />
         ) : (
           <ScrollView>
-            {this.state.news.map((news, index) => (
-              news.urlToImage ? <View key={index}>
-              <Image
-                  source={{uri: `${news.urlToImage}`}}
-                  style={{height: 200, width: 200, borderRadius: 10}}
-                />
-              </View> : null
-            ))}
+            {this.state.news.map((news, index) =>
+              news.urlToImage ? (
+                <View key={index}>
+                  <Image
+                    source={{uri: `${news.urlToImage}`}}
+                    style={{height: 100, width: 100, borderRadius: 10}}
+                  />
+                </View>
+              ) : null,
+            )}
           </ScrollView>
         )}
       </View>
