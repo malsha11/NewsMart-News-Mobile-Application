@@ -8,6 +8,7 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import config from '../config/config';
 
 const deviceHeight = Dimensions.get('window').height;
@@ -52,13 +53,21 @@ export default class GetNews extends Component {
           <ScrollView showsVerticalScrollIndicator={false}>
             {this.state.news.map((news, index) =>
               news.urlToImage ? (
-                <View style={styles.newsBox} key={index}>
-                  <Image
-                    source={{uri: `${news.urlToImage}`}}
-                    style={styles.newsImage}
-                  />
-                  <Text style={styles.newstitle}>{news.title}</Text>
-                </View>
+                <TouchableOpacity
+                  key={index}
+                  onPress={() =>
+                    this.props.navigation.navigate('WbeView', {
+                      url: news.url,
+                    })
+                  }>
+                  <View style={styles.newsBox} key={index}>
+                    <Image
+                      source={{uri: `${news.urlToImage}`}}
+                      style={styles.newsImage}
+                    />
+                    <Text style={styles.newstitle}>{news.title}</Text>
+                  </View>
+                </TouchableOpacity>
               ) : null,
             )}
           </ScrollView>
