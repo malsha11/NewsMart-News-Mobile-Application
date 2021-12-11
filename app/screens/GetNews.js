@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
-import {ActivityIndicator, ScrollView, Text, View, Image, Dimensions} from 'react-native';
+import {
+  ActivityIndicator,
+  ScrollView,
+  Text,
+  View,
+  Image,
+  Dimensions,
+} from 'react-native';
 import config from '../config/config';
 
 const deviceHeight = Dimensions.get('window').height;
-const deviceWidth = Dimensions.get('window').width; 
+const deviceWidth = Dimensions.get('window').width;
 
 class GetNews extends Component {
   constructor(props) {
@@ -35,14 +42,28 @@ class GetNews extends Component {
     return (
       <View>
         {this.state.news.length === 0 ? (
-          <ActivityIndicator size="large" color="black" />
+          <ActivityIndicator
+            style={{
+              height: deviceHeight,
+              width: deviceWidth,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            size="large"
+            color="black"
+          />
         ) : (
           <ScrollView showsVerticalScrollIndicator={false}>
             {this.state.news.map((news, index) =>
               news.urlToImage ? (
                 <View
-                  style={{display: 'flex', flexDirection: 'row',
-                  backgroundColor: 'white', borderRadius:10, elevation: 4}}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    backgroundColor: 'white',
+                    borderRadius: 10,
+                    elevation: 4,
+                  }}
                   key={index}>
                   <Image
                     source={{uri: `${news.urlToImage}`}}
