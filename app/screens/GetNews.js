@@ -36,12 +36,12 @@ class GetNews extends Component {
         ) : (
           <ScrollView>
             {this.state.news.map((news, index) => (
-              <View key={index}>
+              news.urlToImage ? <View key={index}>
               <Image
                   source={{uri: `${news.urlToImage}`}}
                   style={{height: 200, width: 200, borderRadius: 10}}
                 />
-              </View>
+              </View> : null
             ))}
           </ScrollView>
         )}
