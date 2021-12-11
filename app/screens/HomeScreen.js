@@ -14,8 +14,7 @@ export default class HomeScreen extends Component {
     return (
       <View>
         <Categories navigation={this.props.navigation} />
-        <TrendingNews/>
-        <Text>Home Screen</Text>
+        <TrendingNews navigation={this.props.navigation}/>
       </View>
     );
   }

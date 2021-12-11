@@ -7,6 +7,7 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import config from '../config/config';
 
 export default class TrendingNews extends Component {
@@ -41,13 +42,21 @@ export default class TrendingNews extends Component {
         ) : (
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             {this.state.news.map((news, index) => (
-              <View style={{margin: 10}} key={index}>
-                <Image
-                  source={{uri: `${news.urlToImage}`}}
-                  style={styles.trandingNewsImage}
-                />
-                <Text style={styles.trandingNewsTitle}>{news.title}</Text>
-              </View>
+              <TouchableOpacity
+                key={index}
+                onPress={() =>
+                  this.props.navigation.navigate('WebView', {
+                    url: news.url,
+                  })
+                }>
+                <View style={{margin: 10}}>
+                  <Image
+                    source={{uri: `${news.urlToImage}`}}
+                    style={styles.trandingNewsImage}
+                  />
+                  <Text style={styles.trandingNewsTitle}>{news.title}</Text>
+                </View>
+              </TouchableOpacity>
             ))}
           </ScrollView>
         )}
