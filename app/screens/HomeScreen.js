@@ -6,9 +6,29 @@ import TrendingNews from '../components/TrendingNews';
 import config from '../config/config';
 
 export default class HomeScreen extends Component {
-  state = {
-    news: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      news: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch(
+      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${config.API_KEY}`,
+    )
+      .then(res => res.json())
+      .then(response => {
+        this.setState({
+          news: response.articles,
+        });
+        /*setLoading(false)*/
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
 
   render() {
     return (
