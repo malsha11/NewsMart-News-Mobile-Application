@@ -68,7 +68,9 @@ const styles = StyleSheet.create({
   trandingNewsTitle: {
     width: 200,
     height: 70,
+    color:'#080707',
     textAlign: 'justify',
+    
   },
   trandingNewsImage: {
     height: 200,

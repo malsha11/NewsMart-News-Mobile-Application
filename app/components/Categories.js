@@ -5,7 +5,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 const categories = [
   'Entertainment',
   'Business',
-  'Politics',
+  'Science',
   'Health',
   'Technology',
   'Sports',
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 19,
     margin: 10,
     borderRadius: 10,
+    /*backgroundColor:'#bbc5f0',*/
+    color: 'black',
   },
- 
 });

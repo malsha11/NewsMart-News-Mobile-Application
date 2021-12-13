@@ -57,7 +57,7 @@ export default class GetNews extends Component {
                   key={index}
                   onPress={() =>
                     this.props.navigation.navigate('WebView', {
-                      url: news.url,
+                      /*getnews from websites*/ url: news.url,
                     })
                   }>
                   <View style={styles.newsBox} key={index}>
