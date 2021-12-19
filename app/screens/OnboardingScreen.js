@@ -3,17 +3,27 @@ import {View, Text, Button, StyleSheet, Image} from 'react-native';
 
 import Onboarding from 'react-native-onboarding-swiper';
 
-const Skip = () => (
+const Skip = ({...props}) => (
     <Button
         title='Skip'
         color='#000000'
+        
     />
 );
 
-const Next = () => (
+const Next = ({...props}) => (
     <Button
         title='Next'
         color='#000000'
+        {...props}
+    />
+);
+
+const Done = ({...props}) => (
+    <Button
+        title='Done'
+        color='#000000'
+        {...props}
     />
 );
 
@@ -22,6 +32,7 @@ const OnboardingScreen = ({navigation}) => {
     <Onboarding
       SkipButtonComponent={Skip}
       NextButtonComponent={Next}
+      DoneButtonComponent={Done}
       onSkip={() => navigation.replace("Login")}/* After skip Go to login screen*/
       onDone={() => navigation.navigate("Login")} /* After Done Go to login screen*/
       pages={[
