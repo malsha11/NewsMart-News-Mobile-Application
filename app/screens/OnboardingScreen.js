@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button, StyleSheet, Image} from 'react-native';
+import {View, Text, Button, StyleSheet,TouchableOpacity, Image} from 'react-native';
 
 import Onboarding from 'react-native-onboarding-swiper';
 
@@ -20,11 +20,11 @@ const Next = ({...props}) => (
 );
 
 const Done = ({...props}) => (
-    <Button
-        title='Done'
-        color='#000000'
-        {...props}
-    />
+    <TouchableOpacity
+        style={{marginHorizontal:8}}
+        {...props}>
+        <Text style= {{fontSize:16}}>Done</Text>
+    </TouchableOpacity>
 );
 
 const OnboardingScreen = ({navigation}) => {
