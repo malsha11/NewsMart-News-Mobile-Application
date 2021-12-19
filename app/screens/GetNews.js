@@ -7,8 +7,9 @@ import {
   View,
   Image,
   Dimensions,
+  TouchableOpacity,
 } from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+
 import config from '../config/config';
 
 const deviceHeight = Dimensions.get('window').height;
