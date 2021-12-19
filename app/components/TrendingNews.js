@@ -6,8 +6,10 @@ import {
   Image,
   Text,
   StyleSheet,
+  TouchableOpacity
+
 } from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+
 import config from '../config/config';
 
 export default class TrendingNews extends Component {
