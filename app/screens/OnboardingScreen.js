@@ -3,10 +3,10 @@ import {View, Text, Button, StyleSheet,TouchableOpacity, Image} from 'react-nati
 
 import Onboarding from 'react-native-onboarding-swiper';
 
-const Dots = () => {
+const Dots = ({selected}) => {
     let backgroundColor;
 
-    backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    backgroundColor = selected ? 'rgba(0, 0, 0, 0.8)':'rgba(0, 0, 0, 0.3)';
 
     return (
         <View
@@ -15,8 +15,9 @@ const Dots = () => {
                 height:5,
                 marginHorizontal:3,
                 backgroundColor
-            }}
-    )
+           }}
+        />
+    );
 }
 
 const Skip = ({...props}) => (
