@@ -6,36 +6,38 @@ import Onboarding from 'react-native-onboarding-swiper';
 const OnboardingScreen = ({navigation}) => {
   return (
     <Onboarding
+      onSkip={() => navigation.replace("Login")}/* After skip Go to login screen*/
+      onDone={() => navigation.navigate("Login")} /* After Done Go to login screen*/
       pages={[
         {
-          backgroundColor: '#fff',
+          backgroundColor: '#b7ebc5',
           image: <Image source={require('../assets/images/onboarding-img1.png')} />,
-          title: 'Onboarding 1',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          title: 'Welcome To NewsMart',
+          subtitle: 'A New Way To Connect With The World',
         },
         {
-          backgroundColor: '#fff',
+          backgroundColor: '#d4b7eb',
           image: <Image source={require('../assets/images/onboarding-img2.png')} />,
-          title: 'Onboarding 2',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          title: 'Easy To Get Breaking News',
+          subtitle: 'Ability to get breaking news quickly and esaily',
         },
         {
-          backgroundColor: '#fff',
+          backgroundColor: '#ebbdb7',
           image: <Image source={require('../assets/images/onboarding-img3.png')} />,
-          title: 'Onboarding 2',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          title: 'Get News For All Catagories',
+          subtitle: 'Technology, Science,Entertainment,Business,Health & Sports',
         },
         {
-          backgroundColor: '#fff',
+          backgroundColor: '#eaebb7',
           image: <Image source={require('../assets/images/onboarding-img4.png')} />,
-          title: 'Onboarding 2',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          title: 'Get Treanding News',
+          subtitle: 'Access All The Treanding News In A Second',
         },
         {
-          backgroundColor: '#fff',
+          backgroundColor: '#b7ebde',
           image: <Image source={require('../assets/images/onboarding-img5.png')} />,
-          title: 'Onboarding 2',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          title: 'Getting Start, It Is Easy',
+          subtitle: 'Create Your Account And Get News Easily',
         },
 
       ]}
