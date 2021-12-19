@@ -6,8 +6,7 @@ import {
   Image,
   Text,
   StyleSheet,
-  TouchableOpacity
-
+  TouchableOpacity,
 } from 'react-native';
 
 import config from '../config/config';
@@ -70,9 +69,8 @@ const styles = StyleSheet.create({
   trandingNewsTitle: {
     width: 200,
     height: 70,
-    color:'#080707',
+    color: '#080707',
     textAlign: 'justify',
-    
   },
   trandingNewsImage: {
     height: 200,
