@@ -15,15 +15,16 @@ const Dots = ({selected}) => {
                 height:5,
                 marginHorizontal:3,
                 backgroundColor
-           }}
+            }}
         />
-    );
+    )
 }
 
 const Skip = ({...props}) => (
     <Button
         title='Skip'
         color='#000000'
+        {...props}
         
     />
 );

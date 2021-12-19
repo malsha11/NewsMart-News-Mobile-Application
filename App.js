@@ -1,5 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
+import {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -16,10 +17,10 @@ const AppStack = createStackNavigator();
 const App = () => {
   const [isFirstLaunch, setIsFirstLaunch] = React.useState(null);
 
-  React.useEffect(() => {
-    AsyncStorage.getItem('alreadyLaunched').then(value => {
-      if ((value = null)) {
-        AsyncStorage.setItem('alreadyLaunched', 'true');
+  useEffect(() => {
+    AsyncStorage.getItem('alreadyLanuch').then(value => {
+      if (value == null) {
+        AsyncStorage.setItem('alreadyLunched', 'true');
         setIsFirstLaunch(true);
       } else {
         setIsFirstLaunch(false);
