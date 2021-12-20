@@ -16,6 +16,8 @@ import SocialButton from '../components/SocialButton';
 const SignupScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Create an account</Text>
@@ -33,6 +35,14 @@ const SignupScreen = ({navigation}) => {
         labelValue={password}
         onChangeText={userPassword => setPassword(userPassword)}
         placeholderText="Password"
+        iconType="lock"
+        secureTextEntry={true}
+      />
+
+      <FormInput
+        labelValue={confirmPassword}
+        onChangeText={userPassword => setConfirmPassword(userPassword)}
+        placeholderText="Confirm Password"
         iconType="lock"
         secureTextEntry={true}
       />
@@ -74,11 +84,9 @@ const SignupScreen = ({navigation}) => {
       />
 
       <TouchableOpacity
-        style={styles.forgotButton}
-        onPress={() => navigation.navigate('Signup')}>
-        <Text style={styles.navButtonText}>
-          Don't have and account ? Create here{' '}
-        </Text>
+        style={styles.navButton}
+        onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.navButtonText}>Have an account? Sign In </Text>
       </TouchableOpacity>
     </View>
   );
