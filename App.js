@@ -12,10 +12,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import WebViewComponent from './app/components/WebView';
 
+
 const AppStack = createStackNavigator();
 
 const App = () => {
-  const [isFirstLaunch, setIsFirstLaunch] = React.useState(null);
+  const [isFirstLaunch, setIsFirstLaunch] = useState(null);
 
   useEffect(() => {
     AsyncStorage.getItem('alreadyLanuch').then(value => {
