@@ -1,4 +1,4 @@
-import {useEffect, useState, useContext} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthStack from './AluthStack';
 
