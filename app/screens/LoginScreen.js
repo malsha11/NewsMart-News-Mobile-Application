@@ -45,6 +45,10 @@ const LoginScreen = ({navigation}) => {
         buttonTitle="Sign In"
         onPress={() => alert('Sign In Clicked!')}
       />
+
+      <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
+        <Text style={styles.navButtonText}>Forgot Password?</Text>
+      </TouchableOpacity>
     </View>
   );
 };
