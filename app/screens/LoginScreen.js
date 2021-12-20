@@ -1,8 +1,9 @@
 import React from 'react';
 
 import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
-
+import FormButton from '../components/FormButton';
 import FormInput from '../components/FormInput';
+import SocialButton from '../components/SocialButton';
 
 const LoginScreen = ({navigation}) => {
   return (
@@ -12,6 +13,7 @@ const LoginScreen = ({navigation}) => {
         style={styles.logo}
       />
       <Text style={styles.text}>NewsMart News App</Text>
+      <FormInput placeholderText="Email" iconType="user" />
     </View>
   );
 };
