@@ -2,6 +2,7 @@
 import * as React from 'react';
 import {useEffect, useState} from 'react';
 import {View} from 'react-native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 //import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -52,7 +53,29 @@ const AuthStack = () => {
         component={LoginScreen}
         options={{header: () => null}}
       />
-      <Stack.Screen name="Signup" component={SignupScreen} />
+      <Stack.Screen
+        name="Signup"
+        component={SignupScreen}
+        options={({navigation}) => ({
+          title: '',
+          headerStyle: {
+            backgroundColor: '#f9fafd',
+            elevation: 0,
+          },
+
+          headerLeft: () => (
+            <View style={{marginLeft: 10}}>
+              <FontAwesome.Button 
+                name="long-arrow-left"
+                size={25}
+                backgroundColor="#f9fafd"
+                color="#333"
+                onPress={() => navigation.navigate('Login')}
+              />
+            </View>
+          ),
+        })}
+      />
       <Stack.Screen name="Trending" component={HomeScreen} />
       <Stack.Screen name="GetNews" component={GetNews} />
       <Stack.Screen

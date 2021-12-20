@@ -1,5 +1,4 @@
 import React, {useContext, useState} from 'react';
-
 import {
   View,
   Text,
@@ -9,6 +8,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+
 import FormButton from '../components/FormButton';
 import FormInput from '../components/FormInput';
 import SocialButton from '../components/SocialButton';
@@ -42,9 +42,20 @@ const SignupScreen = ({navigation}) => {
         onPress={() => alert('Sign Up Clicked!')}
       />
 
-      <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
-        <Text style={styles.navButtonText}>Forgot Password?</Text>
-      </TouchableOpacity>
+      <View style={styles.textPrivate}>
+        <Text style={styles.color_textPrivate}>
+          By registering, you confirm that you accept our
+        </Text>
+        <TouchableOpacity
+          onPress={() => alert('Terms of service & Privacy Policy Clicked!')}>
+          <Text style={[styles.color_textPrivate, {color: '#e88832'}]}>
+            {' '}
+            Terms of service & Privacy Policy
+          </Text>
+        </TouchableOpacity>
+        {/*<Text style={styles.color_textPrivate}> and </Text>
+        <Text style={[styles.color_textPrivate, {color: '#e88832'}]}> Privacy Policy </Text>*/}
+      </View>
 
       <SocialButton
         buttonTitle="Sign In with Facebook"
@@ -69,7 +80,6 @@ const SignupScreen = ({navigation}) => {
           Don't have and account ? Create here{' '}
         </Text>
       </TouchableOpacity>
-
     </View>
   );
 };
