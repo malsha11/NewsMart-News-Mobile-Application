@@ -40,6 +40,11 @@ const LoginScreen = ({navigation}) => {
         iconType="lock"
         secureTextEntry={true}
       />
+
+      <FormButton
+        buttonTitle="Sign In"
+        onPress={() => alert('Sign In Clicked!')}
+      />
     </View>
   );
 };
