@@ -42,5 +42,22 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderRadius: 3,
   },
-  
+  iconWrapper: {
+    width: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  icon: {
+    fontWeight: 'bold',
+  },
+  btnTxtWrapper: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    fontFamily: 'Lato-Regular',
+  },
 });
