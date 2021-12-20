@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 
-import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  Platform,
+  StyleSheet,
+} from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import FormButton from '../components/FormButton';
 import FormInput from '../components/FormInput';
 import SocialButton from '../components/SocialButton';
 
 const LoginScreen = ({navigation}) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   return (
     <View style={styles.container}>
       <Image
@@ -13,7 +23,15 @@ const LoginScreen = ({navigation}) => {
         style={styles.logo}
       />
       <Text style={styles.text}>NewsMart News App</Text>
-      <FormInput placeholderText="Email" iconType="user" />
+      <FormInput
+        labelValue={email}
+        onChangeText={userEmail => setEmail(userEmail)}
+        placeholderText="Email"
+        iconType="user"
+        keyboardType="email-address"
+        autoCapitalize="none"
+        autoCorrect={false}
+      />
     </View>
   );
 };
