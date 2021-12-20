@@ -32,6 +32,14 @@ const LoginScreen = ({navigation}) => {
         autoCapitalize="none"
         autoCorrect={false}
       />
+
+      <FormInput
+        labelValue={password}
+        onChangeText={userPassword => setPassword(userPassword)}
+        placeholderText="Password"
+        iconType="lock"
+        secureTextEntry={true}
+      />
     </View>
   );
 };
