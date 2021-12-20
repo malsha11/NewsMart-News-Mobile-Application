@@ -68,7 +68,7 @@ const SignupScreen = ({navigation}) => {
       </View>
 
       <SocialButton
-        buttonTitle="Sign In with Facebook"
+        buttonTitle="Sign Up with Facebook"
         btnType="facebook"
         color="#4867aa"
         backgroundColor="#e6eaf4"
@@ -76,7 +76,7 @@ const SignupScreen = ({navigation}) => {
       />
 
       <SocialButton
-        buttonTitle="Sign In with Google"
+        buttonTitle="Sign Up with Google"
         btnType="google"
         color="#de4d41"
         backgroundColor="#f5e7ea"
