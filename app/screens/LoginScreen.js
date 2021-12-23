@@ -19,7 +19,7 @@ const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../assets/images/rn-social-logo.png')}
+        source={require('../assets/images/nbc-news-logo.png')}
         style={styles.logo}
       />
       <Text style={styles.text}>NewsMart News App</Text>
@@ -43,8 +43,8 @@ const LoginScreen = ({navigation}) => {
 
       <FormButton
         buttonTitle="Sign In"
-        onPress={() => alert('Sign In Clicked!')}
-      />
+        onPress={() => navigation.navigate('Trending')}></FormButton>
+      
 
       <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
         <Text style={styles.navButtonText}>Forgot Password?</Text>

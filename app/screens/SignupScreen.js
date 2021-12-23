@@ -49,7 +49,7 @@ const SignupScreen = ({navigation}) => {
 
       <FormButton
         buttonTitle="Sign Up"
-        onPress={() => alert('Sign Up Clicked!')}
+        onPress={() => navigation.navigate('Login')}
       />
 
       <View style={styles.textPrivate}>
