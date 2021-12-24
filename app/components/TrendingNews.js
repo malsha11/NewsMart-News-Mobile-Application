@@ -1,8 +1,17 @@
 import React, {Component} from 'react';
-import {View, ScrollView, ActivityIndicator, Image, Text} from 'react-native';
+import {
+  View,
+  ScrollView,
+  ActivityIndicator,
+  Image,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+
 import config from '../config/config';
 
-class TrendingNews extends Component {
+export default class TrendingNews extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +28,7 @@ class TrendingNews extends Component {
         this.setState({
           news: response.articles,
         });
-        setLoading(false)
+        /*setLoading(false)*/
       })
       .catch(error => {
         console.log(error);
@@ -34,15 +43,21 @@ class TrendingNews extends Component {
         ) : (
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             {this.state.news.map((news, index) => (
-              <View style={{margin: 10}} key={index}>
-                <Image
-                  source={{uri: `${news.urlToImage}`}}
-                  style={{height: 200, width: 200, borderRadius: 10}}
-                />
-                <Text style={{width: 200, textAlign: 'justify'}}>
-                  {news.title}
-                </Text>
-              </View>
+              <TouchableOpacity
+                key={index}
+                onPress={() =>
+                  this.props.navigation.navigate('WebView', {
+                    url: news.url,
+                  })
+                }>
+                <View style={{margin: 10}}>
+                  <Image
+                    source={{uri: `${news.urlToImage}`}}
+                    style={styles.trandingNewsImage}
+                  />
+                  <Text style={styles.trandingNewsTitle}>{news.title}</Text>
+                </View>
+              </TouchableOpacity>
             ))}
           </ScrollView>
         )}
@@ -50,5 +65,16 @@ class TrendingNews extends Component {
     );
   }
 }
-
-export default TrendingNews;
+const styles = StyleSheet.create({
+  trandingNewsTitle: {
+    width: 200,
+    height: 70,
+    color: '#080707',
+    textAlign: 'justify',
+  },
+  trandingNewsImage: {
+    height: 200,
+    width: 200,
+    borderRadius: 10,
+  },
+});
